@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCULPT – Body & Face Studio | Sofiia Golubieva</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* =============================================
+     FARBEN — hier ändern für andere Farbtöne
+     ============================================= */
+  :root {
+    --gold:        #C9A84C;
+    --gold-light:  #E8D490;
+    --gold-pale:   #F5EDD0;
+    --gold-dark:   #A07820;
+    --cream:       #FDFAF3;
+    --beige:       #F7F0E2;
+    --beige-mid:   #EEE4CC;
+    --beige-dark:  #DCCFB0;
+    --brown-soft:  #6B4E22;
+    --brown-deep:  #4A3010;
+    --text:        #3A2A0E;
+    --text-mid:    #8A7050;
+    --text-light:  #B09870;
+    --white:       #FFFFFF;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'Montserrat', sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    overflow-x:hidden;
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(22px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  @keyframes spin {
+    from { transform:rotate(0deg); }
+    to   { transform:rotate(360deg); }
+  }
+  @keyframes glow {
+    0%,100% { box-shadow:0 6px 24px rgba(160,120,32,0.35); }
+    50%      { box-shadow:0 6px 44px rgba(160,120,32,0.65); }
+  }
+
+  /* ── BUTTONS ── */
+  .btn-gold {
+    display:inline-block;
+    padding:1rem 2.5rem;
+    background:linear-gradient(135deg, var(--gold-dark), var(--gold), #D4B860);
+    color:var(--white);
+    font-family:'Montserrat',sans-serif;
+    font-size:0.65rem; font-weight:600;
+    letter-spacing:3px; text-transform:uppercase;
+    text-decoration:none; border:none; cursor:pointer;
+    box-shadow:0 4px 22px rgba(160,120,32,0.28);
+    transition:transform 0.3s, box-shadow 0.3s;
+  }
+  .btn-gold:hover { transform:translateY(-2px); box-shadow:0 8px 34px rgba(160,120,32,0.42); }
+
+  .btn-outline {
+    display:inline-block;
+    padding:1rem 2.5rem;
+    background:transparent; color:var(--gold-dark);
+    font-family:'Montserrat',sans-serif;
+    font-size:0.65rem; font-weight:600;
+    letter-spacing:3px; text-transform:uppercase;
+    text-decoration:none; border:1.5px solid var(--gold);
+    cursor:pointer; transition:all 0.3s;
+  }
+  .btn-outline:hover { background:var(--gold); color:var(--white); }
+
+  /* ── SECTION HEADERS ── */
+  .sec-label {
+    font-size:0.58rem; font-weight:600; letter-spacing:4px;
+    text-transform:uppercase; color:var(--gold);
+    text-align:center; margin-bottom:0.5rem;
+  }
+  .sec-title {
+    font-family:'Cormorant Garamond',serif;
+    font-size:2.8rem; font-weight:300;
+    color:var(--brown-deep); text-align:center;
+    line-height:1.2; margin-bottom:0.8rem;
+  }
+  .sec-title em { font-style:italic; color:var(--gold-dark); }
+  .sec-desc {
+    font-size:0.78rem; font-weight:300; color:var(--text-mid);
+    text-align:center; max-width:520px;
+    margin:0 auto 3.5rem; line-height:1.95;
+  }
+
+  /* ══════════════════════════════
+     NAVIGATION
+  ══════════════════════════════ */
+  nav {
+    position:fixed; top:0; width:100%; z-index:100;
+    background:rgba(253,250,243,0.97);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(201,168,76,0.25);
+    padding:0.85rem 3rem;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo {
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.45rem; font-weight:600;
+    color:var(--gold-dark); letter-spacing:4px;
+  }
+  .nav-links { display:flex; gap:2rem; list-style:none; }
+  .nav-links a {
+    font-size:0.6rem; font-weight:500;
+    letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--text-mid); text-decoration:none;
+    transition:color 0.3s;
+  }
+  .nav-links a:hover { color:var(--gold); }
+  .nav-social { display:flex; gap:1rem; align-items:center; }
+  .nav-social a {
+    color:var(--gold); text-decoration:none;
+    display:flex; transition:transform 0.3s, color 0.3s;
+  }
+  .nav-social a:hover { transform:scale(1.2); color:var(--gold-dark); }
+
+  /* ══════════════════════════════
+     HERO
+  ══════════════════════════════ */
+  .hero {
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse at 72% 38%, rgba(201,168,76,0.11) 0%, transparent 52%),
+      radial-gradient(ellipse at 12% 80%, rgba(201,168,76,0.07) 0%, transparent 48%),
+      linear-gradient(152deg, #FDFAF3 0%, #F7F0E2 55%, #EEE4CC 100%);
+    display:grid; grid-template-columns:1fr 1fr;
+    align-items:center; padding:9rem 6rem 5rem;
+    gap:4rem; position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:''; position:absolute; top:-18%; right:-10%;
+    width:600px; height:600px; border-radius:50%;
+    border:1px solid rgba(201,168,76,0.16);
+    animation:spin 38s linear infinite;
+  }
+  .hero::after {
+    content:''; position:absolute; top:-7%; right:-4%;
+    width:390px; height:390px; border-radius:50%;
+    border:1px solid rgba(201,168,76,0.1);
+    animation:spin 24s linear infinite reverse;
+  }
+
+  .hero-content { position:relative; z-index:2; }
+
+  .hero-badge {
+    display:inline-block;
+    font-size:0.58rem; font-weight:600; letter-spacing:3.5px; text-transform:uppercase;
+    color:var(--gold);
+    background:rgba(201,168,76,0.09); border:1px solid rgba(201,168,76,0.28);
+    padding:0.4rem 1.2rem; margin-bottom:1.8rem;
+    animation:fadeUp 0.7s ease both;
+  }
+
+  /* Logos in hero */
+  .hero-logos {
+    display:flex; align-items:center; gap:1.6rem; margin-bottom:2.2rem;
+    animation:fadeUp 0.85s ease 0.1s both;
+  }
+  .logo-sculpt { display:flex; flex-direction:column; align-items:center; gap:4px; }
+  .logo-circle {
+    width:66px; height:66px; border-radius:50%;
+    background:radial-gradient(circle at 36% 30%, #F8E070, #C9A84C 44%, #8A6A12 76%, #2E1C04);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 4px 24px rgba(201,168,76,0.42);
+    font-size:1.5rem; color:rgba(255,255,255,0.55);
+  }
+  .logo-sculpt-name {
+    font-family:'Cormorant Garamond',serif;
+    font-size:1rem; font-weight:600; letter-spacing:4px; color:var(--gold-dark);
+  }
+  .logo-sculpt-sub {
+    font-size:0.42rem; letter-spacing:2px; text-transform:uppercase; color:var(--text-light);
+  }
+  .logo-div {
+    width:1px; height:52px;
+    background:linear-gradient(to bottom, transparent, var(--gold), transparent);
+  }
+  .logo-strato { display:flex; flex-direction:column; gap:3px; }
+  .logo-strato-name {
+    font-size:0.88rem; font-weight:700; color:var(--brown-deep);
+    letter-spacing:0.5px; line-height:1.1;
+  }
+  .logo-strato-sub {
+    font-size:0.42rem; letter-spacing:2px;
+    text-transform:uppercase; color:var(--text-light);
+  }
+
+  .hero h1 {
+    font-family:'Cormorant Garamond',serif;
+    font-size:3.9rem; font-weight:300; line-height:1.15;
+    color:var(--brown-deep); margin-bottom:0.7rem;
+    animation:fadeUp 0.9s ease 0.15s both;
+  }
+  .hero h1 em { font-style:italic; color:var(--gold-dark); }
+
+  /* ── OFFERTEXT — hier ändern ── */
+  .hero-offer {
+    font-size:0.83rem; font-weight:300; color:var(--text-mid);
+    line-height:1.9; margin-bottom:2.2rem; max-width:400px;
+    animation:fadeUp 1s ease 0.2s both;
+  }
+
+  .hero-cta { display:flex; gap:1rem; animation:fadeUp 1.1s ease 0.25s both; }
+
+  /* Hero visual */
+  .hero-visual { position:relative; z-index:2; display:flex; justify-content:center; }
+  .hero-frame {
+    width:400px; height:540px; position:relative;
+    animation:fadeUp 1s ease 0.3s both;
+  }
+  .hero-frame::before {
+    content:''; position:absolute; top:-14px; right:-14px;
+    width:100%; height:100%;
+    border:1px solid rgba(201,168,76,0.32); z-index:-1;
+  }
+
+  /* ── FOTO PLATZHALTER — wird durch <img> ersetzt ── */
+  .hero-photo {
+    width:100%; height:100%;
+    background:linear-gradient(155deg,#EEE4CC,#D8C8A8,#C9A84C22);
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:1rem; color:var(--gold);
+  }
+  .hero-photo svg { width:65px; height:65px; opacity:0.3; }
+  .hero-photo-label {
+    font-family:'Cormorant Garamond',serif;
+    font-size:0.88rem; letter-spacing:2px; color:var(--text-light);
+  }
+
+  .hero-stats {
+    position:absolute; bottom:-16px; left:-26px;
+    background:var(--white); padding:1.2rem 1.6rem;
+    box-shadow:0 8px 36px rgba(160,120,32,0.12);
+    border-top:3px solid var(--gold);
+    display:flex; gap:2rem;
+  }
+  .stat-num {
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.9rem; font-weight:600; color:var(--gold-dark); line-height:1;
+  }
+  .stat-lbl {
+    font-size:0.5rem; letter-spacing:1.5px;
+    text-transform:uppercase; color:var(--text-light); margin-top:2px;
+  }
+
+  /* ══════════════════════════════
+     GOLD STRIP
+  ══════════════════════════════ */
+  .strip {
+    background:linear-gradient(135deg, var(--gold-dark), var(--gold), #D4B860);
+    padding:1.4rem 4rem;
+    display:flex; justify-content:center;
+    gap:3.5rem; align-items:center; flex-wrap:wrap;
+  }
+  .strip-item { display:flex; align-items:center; gap:0.7rem; color:var(--white); }
+  .strip-item span { font-size:0.6rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; }
+  .strip-sep { width:1px; height:26px; background:rgba(255,255,255,0.25); }
+
+  /* ══════════════════════════════
+     ÜBER DIE MEISTERIN
+  ══════════════════════════════ */
+  .master {
+    background:var(--white);
+    padding:5.5rem 6rem;
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:5rem; align-items:center;
+  }
+  .master-img-wrap { position:relative; }
+  .master-img-frame {
+    width:100%; aspect-ratio:3/4; position:relative;
+  }
+  .master-img-frame::before {
+    content:''; position:absolute; top:16px; left:16px;
+    width:100%; height:100%;
+    border:1px solid rgba(201,168,76,0.3); z-index:0;
+  }
+
+  /* ── MEISTERIN FOTO — hier <img> einfügen ── */
+  .master-photo {
+    width:100%; height:100%; position:relative; z-index:1;
+    background:linear-gradient(155deg,#F0E6D2,#DDD0B4,#C9A84C18);
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:1rem; color:var(--gold);
+    min-height:420px;
+  }
+  .master-photo svg { width:60px; height:60px; opacity:0.28; }
+  .master-photo-label {
+    font-family:'Cormorant Garamond',serif;
+    font-size:0.88rem; letter-spacing:2px; color:var(--text-light);
+  }
+
+  .master-badge {
+    position:absolute; bottom:-20px; right:-20px; z-index:2;
+    background:var(--gold-dark); color:var(--white);
+    padding:1.2rem 1.5rem; text-align:center;
+  }
+  .master-badge-num {
+    font-family:'Cormorant Garamond',serif;
+    font-size:2.2rem; font-weight:300; line-height:1;
+  }
+  .master-badge-lbl {
+    font-size:0.5rem; letter-spacing:2px;
+    text-transform:uppercase; opacity:0.85; margin-top:2px;
+  }
+
+  .master-content { }
+  .master-content .sec-label { text-align:left; margin-bottom:0.4rem; }
+  .master-content .sec-title { text-align:left; font-size:2.4rem; }
+
+  /* ── MEISTERIN TEXT — hier ändern ── */
+  .master-text {
+    font-size:0.82rem; font-weight:300; color:var(--text-mid);
+    line-height:1.95; margin:1.5rem 0 2rem;
+  }
+
+  .master-skills { display:flex; flex-direction:column; gap:0.8rem; margin-bottom:2.2rem; }
+  .master-skill {
+    display:flex; align-items:center; gap:0.8rem;
+    font-size:0.72rem; color:var(--text);
+  }
+  .skill-dot {
+    width:6px; height:6px; border-radius:50%;
+    background:var(--gold); flex-shrink:0;
+  }
+
+  /* ══════════════════════════════
+     LEISTUNGEN (SERVICES)
+  ══════════════════════════════ */
+  .services { background:var(--cream); padding:5.5rem 6rem; }
+
+  .svc-grid {
+    display:grid; grid-template-columns:repeat(3,1fr);
+    gap:2px; background:rgba(201,168,76,0.15);
+  }
+  .svc-card {
+    background:var(--white); position:relative;
+    overflow:hidden; cursor:pointer; transition:transform 0.4s;
+  }
+  .svc-card:hover { transform:scale(1.008); z-index:2; }
+
+  /* ── SERVICE FOTOS — werden durch <img> ersetzt ── */
+  .svc-img {
+    width:100%; height:275px;
+    display:flex; align-items:center; justify-content:center; font-size:2.8rem;
+  }
+  .svc-card:nth-child(1) .svc-img { background:linear-gradient(135deg,#EEE2CC,#DDD0B0); }
+  .svc-card:nth-child(2) .svc-img { background:linear-gradient(135deg,#E4D8BC,#D4C49C); }
+  .svc-card:nth-child(3) .svc-img { background:linear-gradient(135deg,#EAE0CA,#DACCA8); }
+  .svc-card:nth-child(4) .svc-img { background:linear-gradient(135deg,#E6DCCA,#D8C8A4); }
+  .svc-card:nth-child(5) .svc-img { background:linear-gradient(135deg,#EEE4CC,#E0D0AA); }
+
+  .svc-tag {
+    position:absolute; top:1rem; right:1rem;
+    background:rgba(201,168,76,0.85); color:var(--white);
+    font-size:0.5rem; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; padding:0.28rem 0.7rem;
+  }
+  .svc-overlay {
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(to top, rgba(74,48,16,0.92) 0%, transparent 100%);
+    padding:2rem 1.5rem 1.5rem;
+    transform:translateY(28px); transition:transform 0.4s;
+  }
+  .svc-card:hover .svc-overlay { transform:translateY(0); }
+  .svc-num {
+    font-family:'Cormorant Garamond',serif;
+    font-size:0.72rem; color:var(--gold-light); letter-spacing:3px; margin-bottom:0.25rem;
+  }
+  .svc-name {
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.22rem; color:var(--white); margin-bottom:0.5rem; line-height:1.3;
+  }
+  .svc-short {
+    font-size:0.67rem; color:rgba(255,255,255,0.65);
+    line-height:1.6; opacity:0; transition:opacity 0.4s 0.1s;
+  }
+  .svc-card:hover .svc-short { opacity:1; }
+
+  /* ══════════════════════════════
+     TERMINBUCHUNG (SIMPLYBOOK)
+  ══════════════════════════════ */
+  .booking {
+    background:linear-gradient(152deg, #FBF7EE 0%, #F2E8D4 50%, #EAE0C8 100%);
+    padding:5.5rem 6rem; text-align:center;
+    position:relative; overflow:hidden;
+  }
+  .booking::before {
+    content:''; position:absolute; top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:700px; height:700px; border-radius:50%;
+    border:1px solid rgba(201,168,76,0.12);
+  }
+  .booking-widget {
+    position:relative; z-index:2;
+    max-width:900px; margin:0 auto;
+    background:var(--white);
+    border:1px solid rgba(201,168,76,0.22);
+    box-shadow:0 8px 48px rgba(160,120,32,0.1);
+    overflow:hidden;
+    min-height:500px;
+  }
+
+  /* ══════════════════════════════
+     ZERTIFIKATE
+  ══════════════════════════════ */
+  .certs { background:var(--beige); padding:5.5rem 6rem; }
+  .certs-grid {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;
+  }
+  .cert-card {
+    background:var(--white); border:1px solid rgba(201,168,76,0.18);
+    overflow:hidden; transition:box-shadow 0.3s, transform 0.3s;
+  }
+  .cert-card:hover { box-shadow:0 10px 38px rgba(160,120,32,0.12); transform:translateY(-3px); }
+
+  /* ── ZERTIFIKAT FOTOS ── */
+  .cert-img {
+    width:100%; height:190px;
+    display:flex; align-items:center; justify-content:center; font-size:2rem;
+  }
+  .cert-card:nth-child(1) .cert-img { background:linear-gradient(135deg,#1C1C1C,#2E2E2E); color:var(--gold); }
+  .cert-card:nth-child(2) .cert-img { background:linear-gradient(135deg,#f4f4f4,#e4e4e4); color:#444; }
+  .cert-card:nth-child(3) .cert-img { background:linear-gradient(135deg,#FAF5E8,#EDE0C4); color:var(--brown-soft); }
+
+  .cert-info {
+    padding:1rem 1.3rem; border-top:2.5px solid var(--gold);
+  }
+  .cert-name {
+    font-family:'Cormorant Garamond',serif;
+    font-size:1rem; font-weight:600; color:var(--brown-deep); margin-bottom:0.2rem;
+  }
+  .cert-issuer {
+    font-size:0.6rem; color:var(--text-light);
+    letter-spacing:1px; text-transform:uppercase;
+  }
+
+  /* ══════════════════════════════
+     GUTSCHEIN
+  ══════════════════════════════ */
+  .gutschein { background:var(--cream); padding:5.5rem 6rem; }
+  .gut-inner {
+    max-width:860px; margin:0 auto;
+    background:linear-gradient(135deg, var(--brown-deep), var(--brown-soft), var(--brown-deep));
+    padding:4rem;
+    display:grid; grid-template-columns:1fr 1px 1fr;
+    gap:3rem; align-items:center;
+    position:relative; overflow:hidden;
+  }
+  .gut-inner::before {
+    content:''; position:absolute; inset:10px;
+    border:1px solid rgba(201,168,76,0.32); pointer-events:none;
+  }
+  .gut-title {
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem; font-weight:300; color:var(--gold-light);
+    letter-spacing:4px; line-height:1; margin-bottom:0.8rem;
+  }
+  .gut-subtitle {
+    font-size:0.58rem; letter-spacing:3px; text-transform:uppercase;
+    color:rgba(255,255,255,0.48); margin-bottom:1.2rem;
+  }
+  .gut-desc {
+    font-size:0.73rem; color:rgba(255,255,255,0.42); line-height:1.88;
+  }
+  .gut-sep {
+    width:1px; height:110px;
+    background:linear-gradient(to bottom, transparent, var(--gold), transparent);
+  }
+  .gut-right { text-align:center; }
+  .gut-from { font-size:0.62rem; letter-spacing:2px; color:var(--gold-light); margin-bottom:0.3rem; }
+  .gut-amount {
+    font-family:'Cormorant Garamond',serif;
+    font-size:4.5rem; font-weight:300; color:var(--white); line-height:1;
+  }
+  .gut-cur { font-size:1.8rem; color:var(--gold-light); }
+  .gut-btn {
+    display:inline-block; margin-top:1.4rem; padding:0.85rem 2rem;
+    background:linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color:var(--white); font-size:0.58rem; font-weight:600;
+    letter-spacing:3px; text-transform:uppercase;
+    border:none; cursor:pointer; transition:opacity 0.3s;
+  }
+  .gut-btn:hover { opacity:0.8; }
+
+  /* ══════════════════════════════
+     BEWERTUNGEN
+  ══════════════════════════════ */
+  .reviews { background:var(--beige); padding:5.5rem 6rem; }
+  .rev-grid {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;
+  }
+  .rev-card {
+    background:var(--white); padding:2rem;
+    border-bottom:3px solid transparent; position:relative;
+    transition:border-color 0.3s, box-shadow 0.3s;
+  }
+  .rev-card:hover { border-color:var(--gold); box-shadow:0 8px 28px rgba(160,120,32,0.09); }
+  .rev-stars { color:var(--gold); font-size:0.88rem; letter-spacing:2px; margin-bottom:1rem; }
+  .rev-quote {
+    position:absolute; top:0.8rem; right:1.2rem;
+    font-family:'Cormorant Garamond',serif;
+    font-size:4rem; color:rgba(201,168,76,0.12); line-height:1;
+  }
+  .rev-text {
+    font-family:'Cormorant Garamond',serif;
+    font-size:1rem; font-style:italic;
+    color:var(--text); line-height:1.85; margin-bottom:1.5rem;
+  }
+  .rev-author { display:flex; align-items:center; gap:0.8rem; }
+  .rev-avatar {
+    width:34px; height:34px; border-radius:50%;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    color:var(--white); font-size:0.78rem; font-weight:600; flex-shrink:0;
+  }
+  .rev-name { font-size:0.72rem; font-weight:600; color:var(--brown-deep); }
+  .rev-date { font-size:0.57rem; color:var(--text-light); letter-spacing:1px; }
+  .rev-add { text-align:center; margin-top:2.5rem; }
+
+  /* ══════════════════════════════
+     FOOTER
+  ══════════════════════════════ */
+  footer { background:var(--brown-deep); color:var(--white); padding:4rem 6rem 2rem; }
+  .ft-top {
+    display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr;
+    gap:3rem; padding-bottom:3rem;
+    border-bottom:1px solid rgba(201,168,76,0.18);
+  }
+  .ft-logo {
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.75rem; font-weight:600; color:var(--gold-light);
+    letter-spacing:4px; margin-bottom:0.25rem;
+  }
+  .ft-logo-sub {
+    font-size:0.5rem; letter-spacing:3px; text-transform:uppercase;
+    color:rgba(255,255,255,0.32); margin-bottom:1rem;
+  }
+  .ft-tagline {
+    font-family:'Cormorant Garamond',serif;
+    font-size:0.88rem; font-style:italic;
+    color:rgba(255,255,255,0.42); line-height:1.7; margin-bottom:1.4rem;
+  }
+  .ft-social { display:flex; gap:0.7rem; }
+  .ft-soc {
+    width:32px; height:32px;
+    border:1px solid rgba(201,168,76,0.32);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold-light); text-decoration:none;
+    transition:background 0.3s, border-color 0.3s;
+  }
+  .ft-soc:hover { background:var(--gold); border-color:var(--gold); color:var(--white); }
+
+  .ft-col h4 {
+    font-size:0.57rem; font-weight:600; letter-spacing:3px;
+    text-transform:uppercase; color:var(--gold-light); margin-bottom:1.1rem;
+  }
+  .ft-col ul { list-style:none; }
+  .ft-col ul li { margin-bottom:0.55rem; }
+  .ft-col ul li a {
+    font-size:0.72rem; color:rgba(255,255,255,0.42);
+    text-decoration:none; transition:color 0.3s;
+  }
+  .ft-col ul li a:hover { color:var(--gold-light); }
+
+  .ft-contact {
+    display:flex; align-items:flex-start; gap:0.6rem;
+    margin-bottom:0.75rem; font-size:0.72rem;
+    color:rgba(255,255,255,0.42); line-height:1.5;
+  }
+  .ft-icon { color:var(--gold); font-size:0.78rem; flex-shrink:0; margin-top:1px; }
+
+  .ft-bottom {
+    padding-top:1.5rem;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .ft-copy { font-size:0.6rem; color:rgba(255,255,255,0.25); letter-spacing:1px; }
+  .ft-legal { display:flex; gap:1.5rem; }
+  .ft-legal a {
+    font-size:0.6rem; color:rgba(255,255,255,0.25);
+    text-decoration:none; transition:color 0.3s;
+  }
+  .ft-legal a:hover { color:var(--gold-light); }
+
+  /* ══════════════════════════════
+     FLOATING BUTTON
+  ══════════════════════════════ */
+  .float-btn {
+    position:fixed; bottom:2rem; right:2rem; z-index:99;
+    padding:0.95rem 2rem;
+    background:linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color:var(--white); font-size:0.62rem; font-weight:600;
+    letter-spacing:2.5px; text-transform:uppercase;
+    text-decoration:none; border:none; cursor:pointer;
+    animation:glow 3s ease-in-out infinite;
+  }
+
+
+
+  /* ══════════════════════════════
+     MOBILE RESPONSIVE
+  ══════════════════════════════ */
+  @media (max-width: 900px) {
+    nav { padding:0.8rem 1.5rem; }
+    .nav-links { display:none; }
+
+    .hero { grid-template-columns:1fr; padding:7rem 1.8rem 4rem; gap:3rem; text-align:center; }
+    .hero::before, .hero::after { display:none; }
+    .hero h1 { font-size:2.8rem; }
+    .hero-offer { max-width:100%; margin-left:auto; margin-right:auto; }
+    .hero-cta { justify-content:center; flex-wrap:wrap; }
+    .hero-logos { justify-content:center; }
+    .hero-visual { justify-content:center; }
+    .hero-frame { width:300px; height:400px; }
+    .hero-stats { left:0; right:0; bottom:-16px; justify-content:center; }
+
+    .strip { gap:1.5rem; padding:1.2rem 1.5rem; flex-wrap:wrap; }
+    .strip-sep { display:none; }
+
+    .master { grid-template-columns:1fr; padding:4rem 1.8rem; gap:3rem; }
+    .master-img-frame { max-width:320px; margin:0 auto; }
+    .master-content .sec-title { text-align:center; }
+    .master-content .sec-label { text-align:center; }
+    .master-content { text-align:center; }
+    .master-skills { align-items:center; }
+
+    section { padding:4rem 1.8rem; }
+    .services { padding:4rem 1.8rem; }
+
+    .svc-grid { grid-template-columns:1fr; }
+    .svc-overlay { transform:translateY(0); }
+    .svc-short { opacity:1; }
+
+    .certs-grid { grid-template-columns:1fr; gap:1rem; }
+    .rev-grid { grid-template-columns:1fr; gap:1.2rem; }
+
+    .gut-inner { grid-template-columns:1fr; text-align:center; padding:2.5rem 1.5rem; }
+    .gut-sep { display:none; }
+    .gut-title { font-size:2.2rem; }
+
+    footer { padding:3rem 1.8rem 2rem; }
+    .ft-top { grid-template-columns:1fr; gap:2rem; }
+    .ft-bottom { flex-direction:column; gap:1rem; text-align:center; }
+
+    .float-btn { bottom:1rem; right:1rem; padding:0.8rem 1.5rem; font-size:0.58rem; }
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size:2.2rem; }
+    .sec-title { font-size:2rem; }
+    .hero-frame { width:260px; height:350px; }
+    .booking { padding:3rem 1rem; }
+  }
+
+  /* ══════════════════════════════
+     COOKIE BANNER (GDPR)
+  ══════════════════════════════ */
+  .cookie-banner {
+    position:fixed; bottom:0; left:0; right:0; z-index:999;
+    background:var(--brown-deep); color:rgba(255,255,255,0.85);
+    padding:1.2rem 2rem;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:2rem; flex-wrap:wrap;
+    border-top:2px solid var(--gold);
+    font-size:0.7rem; line-height:1.6;
+    transform:translateY(0); transition:transform 0.4s ease;
+  }
+  .cookie-banner.hidden { transform:translateY(110%); }
+  .cookie-banner p { flex:1; min-width:200px; }
+  .cookie-banner a { color:var(--gold-light); }
+  .cookie-actions { display:flex; gap:0.8rem; flex-shrink:0; }
+  .cookie-accept {
+    padding:0.6rem 1.5rem;
+    background:var(--gold); color:var(--white);
+    border:none; cursor:pointer;
+    font-size:0.62rem; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+    transition:opacity 0.3s;
+  }
+  .cookie-accept:hover { opacity:0.85; }
+  .cookie-decline {
+    padding:0.6rem 1.5rem; background:transparent;
+    color:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.2);
+    cursor:pointer; font-size:0.62rem; letter-spacing:2px; text-transform:uppercase;
+    transition:all 0.3s;
+  }
+  .cookie-decline:hover { border-color:rgba(255,255,255,0.5); color:white; }
+</style>
+</head>
+<body>
+
+
+
+<!-- ══════════════════════════════
+     NAVIGATION
+══════════════════════════════ -->
+<nav>
+  <div class="nav-logo">SCULPT</div>
+  <ul class="nav-links">
+    <li><a href="#master">Über uns</a></li>
+    <li><a href="#services">Leistungen</a></li>
+    <li><a href="#booking">Termin</a></li>
+    <li><a href="#certs">Zertifikate</a></li>
+    <li><a href="#reviews">Bewertungen</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
+  <div class="nav-social">
+    <!-- Instagram -->
+    <a href="https://instagram.com/sculpt_body_face_studio" target="_blank" title="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+    <!-- TikTok -->
+    <a href="#" target="_blank" title="TikTok">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.22 8.22 0 0 0 4.81 1.55V6.79a4.85 4.85 0 0 1-1.04-.1z"/>
+      </svg>
+    </a>
+    <!-- Facebook -->
+    <a href="#" target="_blank" title="Facebook">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">✦ Premium Beauty Studio · Oldenburg, Deutschland</div>
+
+    <div class="hero-logos">
+      <div class="logo-sculpt">
+        <div class="logo-circle">✦</div>
+        <div class="logo-sculpt-name">SCULPT</div>
+        <div class="logo-sculpt-sub">Body &amp; Face Studio</div>
+      </div>
+      <div class="logo-div"></div>
+      <div class="logo-strato">
+        <div class="logo-strato-name">strato<br>sphere</div>
+        <div class="logo-strato-sub">Made in Germany 🇩🇪</div>
+      </div>
+    </div>
+
+    <!-- HAUPTÜBERSCHRIFT — hier ändern -->
+    <h1>Ihr Körper.<br><em>Ihre neue</em><br>Schönheit.</h1>
+
+    <!-- ANGEBOTSTEXT — hier ändern -->
+    <p class="hero-offer">
+      Professionelle Körper- und Gesichtsbehandlungen mit zertifizierter Spezialistin.
+      Sichtbare Ergebnisse bereits ab der ersten Behandlung.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#booking" class="btn-gold">Termin buchen</a>
+      <a href="#services" class="btn-outline">Leistungen ansehen</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-frame">
+      <!-- HERO FOTO — <img src="photos/hero.jpg" alt="SCULPT Studio" style="width:100%;height:100%;object-fit:cover"> -->
+      <div class="hero-photo">
+        <svg viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="0.8">
+          <ellipse cx="50" cy="28" rx="16" ry="18"/>
+          <path d="M22 90 Q30 58 50 52 Q70 58 78 90"/>
+        </svg>
+        <div class="hero-photo-label">Foto Sofiia Golubieva</div>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">500+</div>
+          <div class="stat-lbl">Zufriedene Kunden</div>
+        </div>
+        <div>
+          <div class="stat-num">3</div>
+          <div class="stat-lbl">Zertifikate</div>
+        </div>
+        <div>
+          <div class="stat-num">5</div>
+          <div class="stat-lbl">Behandlungen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOLD STRIP -->
+<div class="strip">
+  <div class="strip-item">✦ <span>Sichtbare Ergebnisse ab der 1. Behandlung</span></div>
+  <div class="strip-sep"></div>
+  <div class="strip-item">🇩🇪 <span>Geräte Made in Germany</span></div>
+  <div class="strip-sep"></div>
+  <div class="strip-item">✦ <span>Zertifizierte Spezialistin</span></div>
+  <div class="strip-sep"></div>
+  <div class="strip-item">🌿 <span>Professionelle Kosmetik STYX</span></div>
+</div>
+
+<!-- ══════════════════════════════
+     ÜBER DIE MEISTERIN
+══════════════════════════════ -->
+<section class="master" id="master">
+  <div class="master-img-wrap">
+    <div class="master-img-frame">
+      <!-- MEISTERIN FOTO — <img src="photos/sofiia.jpg" alt="Sofiia Golubieva" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:1"> -->
+      <div class="master-photo">
+        <svg viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="0.8">
+          <ellipse cx="50" cy="28" rx="16" ry="18"/>
+          <path d="M22 90 Q30 58 50 52 Q70 58 78 90"/>
+        </svg>
+        <div class="master-photo-label">Foto Sofiia Golubieva</div>
+      </div>
+    </div>
+    <div class="master-badge">
+      <div class="master-badge-num">3</div>
+      <div class="master-badge-lbl">Zertifikate</div>
+    </div>
+  </div>
+
+  <div class="master-content">
+    <div class="sec-label">Über die Meisterin</div>
+    <!-- MEISTERIN NAME — hier ändern -->
+    <h2 class="sec-title">Sofiia <em>Golubieva</em></h2>
+
+    <!-- MEISTERIN TEXT — hier ändern -->
+    <p class="master-text">
+      Sofiia Golubieva ist zertifizierte Spezialistin für apparative Körper- und Gesichtsbehandlungen.
+      Sie arbeitet mit modernsten Geräten made in Germany — Stratosphere NEO und Dr. Blitz —
+      und setzt auf professionelle Pflegeprodukte der Marke STYX.
+      Sofiia begleitet ihre Kundinnen mit Herz und Fachkenntnis auf dem Weg zu mehr Wohlbefinden,
+      Leichtigkeit und Selbstbewusstsein.
+    </p>
+
+    <!-- KOMPETENZEN — hier ändern -->
+    <div class="master-skills">
+      <div class="master-skill"><div class="skill-dot"></div>Zertifiziert für Stratosphere NEO (Saxony Beauty Technology GmbH)</div>
+      <div class="master-skill"><div class="skill-dot"></div>Zertifiziert für Dr. Blitz Gesichtsmassage</div>
+      <div class="master-skill"><div class="skill-dot"></div>Ausgebildete Brow-Artistin &amp; Lamimaker</div>
+      <div class="master-skill"><div class="skill-dot"></div>Über 500 zufriedene Kundinnen in Deutschland</div>
+    </div>
+
+    <a href="#booking" class="btn-gold">Termin vereinbaren</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     LEISTUNGEN
+══════════════════════════════ -->
+<section class="services" id="services">
+  <div class="sec-label">Unsere Leistungen</div>
+  <h2 class="sec-title">Behandlungen für <em>Körper &amp; Gesicht</em></h2>
+  <p class="sec-desc">Jede Behandlung ist ein Schritt zu Ihrer besten Version. Modernste Geräte, zertifizierte Spezialistin, sichtbare Ergebnisse.</p>
+
+  <div class="svc-grid">
+    <!-- Karte 1 -->
+    <div class="svc-card">
+      <!-- FOTO — <img src="photos/pressotherapie.jpg" ...> -->
+      <div class="svc-img">🫁</div>
+      <div class="svc-tag">Body</div>
+      <div class="svc-overlay">
+        <div class="svc-num">01</div>
+        <div class="svc-name">Pressotherapie des ganzen Körpers</div>
+        <div class="svc-short">Lymphdrainage, Entgiftung, Entstauung. Wirkung bereits nach der ersten Behandlung.</div>
+      </div>
+    </div>
+    <!-- Karte 2 -->
+    <div class="svc-card">
+      <!-- FOTO — <img src="photos/stratosphere-body.jpg" ...> -->
+      <div class="svc-img">⚡</div>
+      <div class="svc-tag">Stratosphere</div>
+      <div class="svc-overlay">
+        <div class="svc-num">02</div>
+        <div class="svc-name">Roller-Massage Körper Stratosphere</div>
+        <div class="svc-short">Anti-Cellulite &amp; Bodyforming. Sichtbare Ergebnisse bereits ab der 1. Sitzung.</div>
+      </div>
+    </div>
+    <!-- Karte 3 -->
+    <div class="svc-card">
+      <!-- FOTO — <img src="photos/drblitz.jpg" ...> -->
+      <div class="svc-img">✨</div>
+      <div class="svc-tag">Dr. Blitz</div>
+      <div class="svc-overlay">
+        <div class="svc-num">03</div>
+        <div class="svc-name">Lifting Gesichtsmassage Dr. Blitz</div>
+        <div class="svc-short">Lifting, Lymphdrainage des Gesichts. Ohne Injektionen — nur Ergebnisse.</div>
+      </div>
+    </div>
+    <!-- Karte 4 -->
+    <div class="svc-card">
+      <!-- FOTO — <img src="photos/wickel.jpg" ...> -->
+      <div class="svc-img">🌿</div>
+      <div class="svc-tag">STYX</div>
+      <div class="svc-overlay">
+        <div class="svc-num">04</div>
+        <div class="svc-name">Körperwickel mit STYX Kosmetik</div>
+        <div class="svc-short">Anti-Cellulite-Wickel mit professioneller STYX-Kosmetik.</div>
+      </div>
+    </div>
+    <!-- Karte 5 -->
+    <div class="svc-card">
+      <!-- FOTO — <img src="photos/wax.jpg" ...> -->
+      <div class="svc-img">🕯️</div>
+      <div class="svc-tag">WAX</div>
+      <div class="svc-overlay">
+        <div class="svc-num">05</div>
+        <div class="svc-name">WAX-Enthaarung Gesicht &amp; Körper</div>
+        <div class="svc-short">Wachsenthaarung für Gesicht und Körper. Sanft, sauber, langanhaltend.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     TERMINBUCHUNG — SIMPLYBOOK
+══════════════════════════════ -->
+<section class="booking" id="booking">
+  <div class="sec-label">Online Buchung</div>
+  <h2 class="sec-title">Jetzt <em>Termin</em> sichern</h2>
+  <p class="sec-desc">Wählen Sie Ihre Wunschbehandlung, Datum und Uhrzeit — direkt online. Schnell, einfach, ohne Anruf.</p>
+
+  <div class="booking-widget">
+    <!-- SimplyBook Widget -->
+    <script src="//widget.simplybook.it/v2/widget/widget.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var widget = new SimplybookWidget({
+        "widget_type": "iframe",
+        "url": "https://sculptbody.simplybook.it",
+        "theme": "belle",
+        "theme_settings": {
+          "timeline_hide_unavailable": "1",
+          "hide_past_days": "0",
+          "timeline_show_end_time": "0",
+          "timeline_modern_display": "as_slots",
+          "sb_base_color": "#c9a84c",
+          "display_item_mode": "block",
+          "dark_font_color": "#1a1a1a",
+          "light_font_color": "#ffffff",
+          "btn_color_1": "#d4af37",
+          "sb_company_label_color": "#8b6914",
+          "hide_img_mode": "0",
+          "show_sidebar": "1",
+          "sb_busy": "#a0896b",
+          "sb_available": "#fff8e7"
+        },
+        "timeline": "modern",
+        "datepicker": "top_calendar",
+        "is_rtl": false,
+        "app_config": { "clear_session": 0, "allow_switch_to_ada": 0, "predefined": [] }
+      });
+    </script>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     ZERTIFIKATE
+══════════════════════════════ -->
+<section class="certs" id="certs">
+  <div class="sec-label">Qualifikationen</div>
+  <h2 class="sec-title">Unsere <em>Zertifikate</em></h2>
+  <p class="sec-desc">Sofiia Golubieva ist zertifizierte Spezialistin für apparative Methoden made in Germany.</p>
+
+  <div class="certs-grid">
+    <div class="cert-card">
+      <!-- ZERTIFIKAT FOTO — <img src="photos/cert-stratosphere.jpg" ...> -->
+      <div class="cert-img">🏆</div>
+      <div class="cert-info">
+        <div class="cert-name">Stratosphere NEO</div>
+        <div class="cert-issuer">Saxony Beauty Technology GmbH · 2026</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <!-- ZERTIFIKAT FOTO — <img src="photos/cert-drblitz.jpg" ...> -->
+      <div class="cert-img">🎓</div>
+      <div class="cert-info">
+        <div class="cert-name">Dr. Blitz — Zertifikat</div>
+        <div class="cert-issuer">Made in Germany · 2026</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <!-- ZERTIFIKAT FOTO — <img src="photos/cert-brows.jpg" ...> -->
+      <div class="cert-img">✦</div>
+      <div class="cert-info">
+        <div class="cert-name">Master of Aesthetic &amp; Brows</div>
+        <div class="cert-issuer">Brow Artist ElKarpiuk · 2022</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     GUTSCHEIN
+══════════════════════════════ -->
+<section class="gutschein" id="gutschein">
+  <div class="sec-label">Geschenkidee</div>
+  <h2 class="sec-title" style="margin-bottom:2.5rem">Gutschein <em>verschenken</em></h2>
+
+  <div class="gut-inner">
+    <div>
+      <div class="gut-title">SCULPT</div>
+      <div class="gut-subtitle">Body &amp; Face Studio · Sofiia Golubieva</div>
+      <!-- GUTSCHEIN TEXT — hier ändern -->
+      <div class="gut-desc">
+        Schenken Sie Ihrer Liebsten Schönheit und Fürsorge.
+        Unsere Geschenkgutscheine sind für alle Behandlungen gültig
+        und das perfekte Geschenk für jeden Anlass.
+      </div>
+    </div>
+    <div class="gut-sep"></div>
+    <div class="gut-right">
+      <div class="gut-amount" style="font-size:2rem;letter-spacing:3px;margin-bottom:0.5rem;">Individuelle<br>Preise</div>
+      <!-- GUTSCHEIN BUTTON — hier WhatsApp-Link oder E-Mail einfügen -->
+      <button class="gut-btn" onclick="window.open('https://wa.me/4916011370777','_blank')">
+        Gutschein anfragen
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     BEWERTUNGEN
+══════════════════════════════ -->
+<section class="reviews" id="reviews">
+  <div class="sec-label">Kundenstimmen</div>
+  <h2 class="sec-title">Was unsere <em>Kunden sagen</em></h2>
+  <p class="sec-desc">Echte Bewertungen unserer Kunden — denn Ergebnisse sprechen für sich.</p>
+
+  <div class="rev-grid">
+    <!-- BEWERTUNG 1 — hier Text ändern -->
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-quote">"</div>
+      <p class="rev-text">Nach der ersten Roller-Massage-Behandlung habe ich sofort einen Unterschied gespürt! Die Haut ist straffer und der Cellulite deutlich weniger. Sofiia ist eine echte Profi!</p>
+      <div class="rev-author">
+        <div class="rev-avatar">M</div>
+        <div>
+          <div class="rev-name">Maria K.</div>
+          <div class="rev-date">April 2026</div>
+        </div>
+      </div>
+    </div>
+    <!-- BEWERTUNG 2 -->
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-quote">"</div>
+      <p class="rev-text">Pressotherapie ist einfach Magie. Meine Beine fühlen sich wie neu an! Ich mache schon den zweiten Kurs. Sehr empfehlenswert für alle, die nach der Arbeit müde Beine haben.</p>
+      <div class="rev-author">
+        <div class="rev-avatar">A</div>
+        <div>
+          <div class="rev-name">Anna S.</div>
+          <div class="rev-date">März 2026</div>
+        </div>
+      </div>
+    </div>
+    <!-- BEWERTUNG 3 -->
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-quote">"</div>
+      <p class="rev-text">Das Lifting-Gerät Dr. Blitz ist unglaublich! Mein Gesicht sieht nach einer Sitzung aus wie nach einem Erholungsurlaub. Absolut empfehlenswert!</p>
+      <div class="rev-author">
+        <div class="rev-avatar">J</div>
+        <div>
+          <div class="rev-name">Julia M.</div>
+          <div class="rev-date">Mai 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rev-add">
+    <!-- BEWERTUNG LINK — Google oder andere Plattform einfügen -->
+    <a href="#" class="btn-outline" style="margin-top:1rem">+ Bewertung hinterlassen</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     FOOTER / KONTAKT
+══════════════════════════════ -->
+<footer id="contact">
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo">SCULPT</div>
+      <div class="ft-logo-sub">Body &amp; Face Studio · Sofiia Golubieva</div>
+      <p class="ft-tagline">"Ihr Körper verdient das Beste.<br>Wir geben ihm genau das."</p>
+      <div class="ft-social">
+        <a href="https://instagram.com/sculpt_body_face_studio" class="ft-soc" target="_blank" title="Instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="#" class="ft-soc" target="_blank" title="TikTok">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.22 8.22 0 0 0 4.81 1.55V6.79a4.85 4.85 0 0 1-1.04-.1z"/>
+          </svg>
+        </a>
+        <a href="#" class="ft-soc" target="_blank" title="Facebook">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="ft-col">
+      <h4>Leistungen</h4>
+      <ul>
+        <li><a href="#services">Pressotherapie</a></li>
+        <li><a href="#services">Roller-Massage Körper</a></li>
+        <li><a href="#services">Lifting Gesicht</a></li>
+        <li><a href="#services">Körperwickel STYX</a></li>
+        <li><a href="#services">WAX-Enthaarung</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="#master">Über die Meisterin</a></li>
+        <li><a href="#certs">Zertifikate</a></li>
+        <li><a href="#gutschein">Gutschein</a></li>
+        <li><a href="#reviews">Bewertungen</a></li>
+        <li><a href="#booking">Online buchen</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4>Kontakt</h4>
+      <!-- KONTAKT — hier Daten einfügen -->
+      <div class="ft-contact"><span class="ft-icon">📞</span><span>+49 160 1137077</span></div>
+      <div class="ft-contact"><span class="ft-icon">📍</span><span>Oldenburg, Deutschland</span></div>
+      <div class="ft-contact"><span class="ft-icon">📸</span><span>@sculpt_body_face_studio</span></div>
+      <div class="ft-contact"><span class="ft-icon">🕐</span><span>Nach Vereinbarung</span></div>
+    </div>
+  </div>
+
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2026 SCULPT Body &amp; Face Studio · Sofiia Golubieva</div>
+    <div class="ft-legal">
+      <!-- IMPRESSUM & DATENSCHUTZ — separate Seiten oder Popups -->
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="#" onclick="alert('Cookie-Einstellungen')">Cookie-Einstellungen</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTON -->
+<a href="#booking" class="float-btn">✦ Termin buchen</a>
+
+<!-- ══════════════════════════════
+     COOKIE BANNER (DSGVO / GDPR)
+══════════════════════════════ -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>
+    Diese Website verwendet Cookies, um Ihnen die bestmögliche Nutzererfahrung zu bieten.
+    Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+    <button class="cookie-decline" onclick="declineCookies()">Nur notwendige</button>
+  </div>
+</div>
+
+<script>
+  // Cookie Banner
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookieBanner').classList.add('hidden');
+  }
+  function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    document.getElementById('cookieBanner').classList.add('hidden');
+  }
+  // Перевірка при завантаженні
+  if (localStorage.getItem('cookieConsent')) {
+    document.getElementById('cookieBanner').classList.add('hidden');
+  }
+
+  // Плавна поява елементів при скролі
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.svc-card, .cert-card, .rev-card, .master-content').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
