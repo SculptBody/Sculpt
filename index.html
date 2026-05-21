@@ -325,7 +325,7 @@ nav.scrolled { padding:0.6rem 3rem; box-shadow:0 4px 30px rgba(160,120,32,0.08);
   display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
 }
 .master-img-wrap { position:relative; }
-.master-frame { width:100%; aspect-ratio:3/4; position:relative; min-height:400px; }
+.master-frame { width:100%; aspect-ratio:2/3; position:relative; min-height:500px; }
 .master-frame::before {
   content:''; position:absolute; top:16px; left:16px;
   width:100%; height:100%; border:1px solid rgba(201,168,76,0.28); z-index:0;
@@ -765,14 +765,17 @@ footer { background:var(--brown-deep); color:var(--white); padding:4rem 6rem 2re
     <div class="hero-eyebrow">✦ Premium Beauty Studio · Oldenburg, Deutschland</div>
 
     <div class="hero-logos">
-      <img src="sculpt-logo.png" class="logo-sculpt-img" alt="SCULPT">
+      <img src="sculpt-logo.png" class="logo-sculpt-img" alt="SCULPT" 
+        style="width:66px;height:66px;border-radius:50%;object-fit:cover;box-shadow:0 4px 24px rgba(201,168,76,0.45);"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="logo-circle" style="display:none;">✦</div>
       <div class="logo-sculpt-text">
         <div class="logo-sculpt-name">SCULPT</div>
         <div class="logo-sculpt-sub">Body &amp; Face Studio</div>
       </div>
       <div class="logo-div"></div>
       <div class="logo-strato">
-        <img src="strato-logo.png" class="logo-strato-img" alt="Stratosphere" style="height:44px;width:auto;object-fit:contain;opacity:0.85;">
+        <img src="strato-logo.png" class="logo-strato-img" alt="Stratosphere" style="height:55px;width:auto;object-fit:contain;opacity:0.9;">
       </div>
     </div>
 
@@ -812,7 +815,7 @@ footer { background:var(--brown-deep); color:var(--white); padding:4rem 6rem 2re
   <div class="hero-visual">
     <div class="hero-frame">
       <!-- HERO FOTO -->
-      <img src="sofiia-schapka.jpeg" alt="Sofiia Golubieva – SCULPT Body & Face Studio">
+      <img src="sofiia-schapka.jpeg" alt="Sofiia Golubieva – SCULPT Body & Face Studio" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
       <div class="hero-stats">
         <div class="stat">
           <div class="stat-num">500+</div>
@@ -907,7 +910,7 @@ footer { background:var(--brown-deep); color:var(--white); padding:4rem 6rem 2re
 <section class="master reveal" id="master">
   <div class="master-img-wrap">
     <div class="master-frame">
-      <img src="sofiia.JPG" alt="Sofiia Golubieva">
+      <img src="sofiia.JPG" alt="Sofiia Golubieva" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;">
     </div>
     <div class="master-badge-box">
       <div class="master-badge-num">3</div>
