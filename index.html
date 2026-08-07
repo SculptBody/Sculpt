@@ -852,16 +852,18 @@ footer { background:var(--brown-deep); color:var(--white); padding:4rem 6rem 2re
   .float-btn { bottom:1rem; right:1rem; padding:0.85rem 1.6rem; font-size:0.58rem; animation:pulse 2.5s ease-in-out infinite; }
 
   .cookie-banner { padding:1rem 1.5rem; }
-}
 
 @media (max-width:768px) {
+  .svc-row-content,
   .svc-row-details,
-  .svc-details,
-  .svc-row-info {
+  .svc-row-list,
+  .svc-row-results,
+  .svc-row-short {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
     height: auto !important;
+    max-height: none !important;
   }
 }
 
