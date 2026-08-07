@@ -1648,18 +1648,15 @@ footer { background:var(--brown-deep); color:var(--white); padding:4rem 6rem 2re
 <script>
   // Toggle service details
   function toggleService(btn) {
-    const details = btn.closest('.svc-row-content').querySelector('.svc-row-details');
-    const isOpen = details.style.display !== 'none';
-    if (isOpen) {
-      details.style.display = 'none';
-      btn.textContent = 'Mehr erfahren ↓';
-      btn.classList.remove('active');
-    } else {
-      details.style.display = 'block';
-      btn.textContent = 'Weniger ↑';
-      btn.classList.add('active');
-    }
-  }
+  const details = btn.closest('.svc-row-content').querySelector('.svc-row-details');
+  details.style.display = 'block';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('.svc-row-details').forEach(function(el) {
+    el.style.display = 'block';
+  });
+});
 
   // Nav scroll effect
   const nav = document.getElementById('mainNav');
