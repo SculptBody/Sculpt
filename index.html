@@ -1398,23 +1398,23 @@ footer { background:var(--brown-deep); color:var(--white); padding:4rem 6rem 2re
       </div>
     </div>
 
-    <div class="booking-widget-box">
-      <script src="https://buchung.treatwell.de/common/venue-menu/javascript/widget-button.js?v1"></script>
-      <script>
-      (function() {
-        var link = document.createElement("link");
-        link.type = "text/css";
-        link.href = "https://buchung.treatwell.de/common/venue-menu/css/widget-button.css";
-        link.rel = "stylesheet";
-        link.media = "screen";
-        document.getElementsByTagName("head")[0].appendChild(link);
-      }());
-      </script>
-      <div
-        id="wahanda-online-booking-widget-iframe"
-        data-widget-url="https://buchung.treatwell.de/ort/534078/menue/"
-      ></div>
-    </div>
+   <div class="booking-widget-box" style="width: 100%; min-height: 700px;">
+  <script src="https://buchung.treatwell.de/common/venue-menu/javascript/widget-button.js?v1"></script>
+  <script>
+    (function() { 
+      var link = document.createElement("link"); 
+      link.type = "text/css"; 
+      link.href = "https://buchung.treatwell.de/common/venue-menu/css/widget-button.css"; 
+      link.rel = "stylesheet"; 
+      link.media = "screen"; 
+      document.getElementsByTagName("head")[0].appendChild(link); 
+    }());
+  </script>
+  <div
+    id="wahanda-online-booking-widget-iframe"
+    data-widget-url="https://buchung.treatwell.de/ort/534078/menue/"
+  ></div>
+</div>
   </div>
 </section>
 
