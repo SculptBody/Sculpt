@@ -815,7 +815,13 @@ footer { background:var(--brown-deep); color:var(--white); padding:4rem 6rem 2re
 
   .svc-grid { grid-template-columns:1fr; }
   .svc-body { border-top:2px solid var(--gold); }
-
+  .svc-row { grid-template-columns:1fr !important; direction:ltr !important; }
+  .svc-row-reverse { direction:ltr !important; }
+  .svc-row-reverse > * { direction:ltr !important; }
+  .svc-row-img { min-height:260px; }
+  .svc-row-content { padding:1.5rem 1.5rem 2rem; }
+  .svc-row-title { font-size:1.2rem; }
+  .svc-row-meta { flex-direction:column; align-items:flex-start; gap:0.
   .benefits { padding:4rem 1.5rem; }
   .benefits-grid { grid-template-columns:1fr; }
 
