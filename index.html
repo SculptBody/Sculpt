@@ -485,16 +485,22 @@ nav.scrolled { padding:0.6rem 3rem; box-shadow:0 4px 30px rgba(160,120,32,0.08);
   display:flex; align-items:center; gap:0.4rem;
 }
 .booking-widget-box {
-  background:var(--white);
-  border:1px solid rgba(201,168,76,0.2);
-  border-top:3px solid var(--gold);
-  box-shadow:0 4px 40px rgba(160,120,32,0.08);
- min-height:850px; overflow:visible;
-.booking-widget-box iframe {
-  height: 850px !important;
+  background: var(--white);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-top: 3px solid var(--gold);
+  box-shadow: 0 4px 40px rgba(160,120,32,0.08);
   min-height: 850px !important;
+  height: auto !important;
+  overflow: visible !important;
 }
 
+.booking-widget-box iframe,
+#wahanda-online-booking-widget-iframe iframe {
+  width: 100% !important;
+  height: 850px !important;
+  min-height: 850px !important;
+  border: none !important;
+}
 /* ══════════════════════════════
    VOR & NACH (Before/After)
 ══════════════════════════════ */
