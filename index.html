@@ -506,8 +506,6 @@ nav.scrolled { padding:0.6rem 3rem; box-shadow:0 4px 30px rgba(160,120,32,0.08);
   gap:1.2rem;
   margin-top:2rem;
 }
-/* 5-е фото займає повну ширину */
-.vn-grid .vn-card:nth-child(5) { grid-column:1 / -1; }
 .vn-card {
   position:relative; overflow:hidden; cursor:pointer;
   border:1px solid rgba(201,168,76,0.15);
@@ -523,10 +521,6 @@ nav.scrolled { padding:0.6rem 3rem; box-shadow:0 4px 30px rgba(160,120,32,0.08);
 }
 /* 5-е фото — широке панорамне */
 .vn-grid .vn-card:nth-child(5) img {
-  aspect-ratio:21/9; object-position:center center;
-}
-.vn-card:hover img { transform:scale(1.03); }
-.vn-card-label {
   position:absolute; bottom:0; left:0; right:0;
   background:linear-gradient(to top,rgba(74,48,16,0.88),transparent);
   padding:2rem 1rem 0.9rem;
@@ -1367,7 +1361,6 @@ footer { background:var(--brown-deep); color:var(--white); padding:4rem 6rem 2re
       <div class="vn-card-label">Ergebnis 4</div>
     </div>
     <div class="vn-card">
-      <img src="vorundnachher5.png" alt="Vorher Nachher Ergebnis 5 – SCULPT Studio Oldenburg">
       <div class="vn-card-label">Ergebnis 5</div>
     </div>
   </div>
