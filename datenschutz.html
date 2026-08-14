@@ -4,155 +4,182 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Datenschutzerklärung – SCULPT Body & Face Studio</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --gold:#C9A84C; --gold-dark:#A07820; --cream:#FDFAF3; --brown-deep:#4A3010; --text:#3A2A0E; --text-mid:#8A7050; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Montserrat',sans-serif; background:var(--cream); color:var(--text); }
-  nav { background:rgba(253,250,243,0.97); border-bottom:1px solid rgba(201,168,76,0.25); padding:1rem 3rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:10; }
-  .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:var(--gold-dark); letter-spacing:4px; text-decoration:none; }
-  .nav-back { font-size:0.62rem; color:var(--text-mid); text-decoration:none; letter-spacing:2px; text-transform:uppercase; transition:color 0.3s; }
-  .nav-back:hover { color:var(--gold); }
-  .page-header { background:linear-gradient(152deg,#FDFAF3,#F7F0E2,#EEE4CC); padding:4rem 6rem 3rem; border-bottom:1px solid rgba(201,168,76,0.2); }
-  .page-label { font-size:0.58rem; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; }
-  .page-title { font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:300; color:var(--brown-deep); }
-  .content { max-width:780px; margin:0 auto; padding:4rem 2rem 5rem; }
-  h2 { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:600; color:var(--brown-deep); margin:2.5rem 0 0.8rem; padding-bottom:0.5rem; border-bottom:1px solid rgba(201,168,76,0.2); }
-  h2:first-child { margin-top:0; }
-  p { font-size:0.8rem; font-weight:300; color:var(--text-mid); line-height:1.95; margin-bottom:0.7rem; }
-  ul { list-style:none; margin:0.5rem 0 0.8rem; }
-  ul li { font-size:0.8rem; font-weight:300; color:var(--text-mid); line-height:1.95; padding-left:1.2rem; position:relative; }
-  ul li::before { content:'✦'; position:absolute; left:0; color:var(--gold); font-size:0.5rem; top:0.45rem; }
+  :root {
+    --gold: #C9A84C; --gold-dark: #A07820; --cream: #FDFAF3; --beige: #F7F0E2;
+    --brown-deep: #4A3010; --text: #3A2A0E; --text-mid: #8A7050;
+  }
+  * { box-sizing: border-box; }
+  body { font-family:'Montserrat',sans-serif; background:var(--cream); color:var(--text); line-height:1.75; margin:0; }
+  .wrap { max-width:820px; margin:0 auto; padding:6rem 1.5rem 5rem; }
   a { color:var(--gold-dark); }
-  strong { font-weight:500; color:var(--text); }
-  .section-num { font-size:0.58rem; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:0.3rem; display:block; }
-  footer { background:var(--brown-deep); color:rgba(255,255,255,0.35); text-align:center; padding:1.5rem; font-size:0.62rem; letter-spacing:1px; }
-  footer a { color:rgba(201,168,76,0.6); text-decoration:none; margin:0 0.8rem; }
-  @media(max-width:700px) { .page-header{padding:3rem 1.5rem 2rem;} nav{padding:1rem 1.5rem;} .content{padding:2.5rem 1.5rem;} .page-title{font-size:2rem;} }
+  .back { display:inline-block; margin-bottom:2rem; font-size:0.75rem; letter-spacing:1px; text-transform:uppercase; }
+  .eyebrow { font-size:0.6rem; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:var(--gold); }
+  h1 { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:2.6rem; color:var(--brown-deep); margin:0.4rem 0 2.5rem; }
+  h2 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.5rem; color:var(--brown-deep); margin:2.4rem 0 0.8rem; border-bottom:1px solid rgba(201,168,76,0.3); padding-bottom:0.4rem; }
+  h3 { font-size:0.95rem; font-weight:600; color:var(--gold-dark); margin:1.4rem 0 0.4rem; }
+  p, li { font-size:0.92rem; color:var(--text); }
+  ul { padding-left:1.3rem; }
+  li { margin-bottom:0.4rem; }
+  .stand { font-size:0.75rem; color:var(--text-mid); margin-top:0.5rem; }
+  .box { background:var(--beige); padding:1.2rem 1.5rem; border-left:3px solid var(--gold); margin:1rem 0; font-size:0.88rem; }
+  footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid rgba(201,168,76,0.3); font-size:0.75rem; color:var(--text-mid); }
+  footer a { margin-right:1rem; }
 </style>
 </head>
 <body>
+<div class="wrap">
+  <a class="back" href="index.html">← Zurück zur Startseite</a>
+  <span class="eyebrow">Rechtliches</span>
+  <h1>Datenschutzerklärung</h1>
 
-<nav>
-  <a href="index.html" class="nav-logo">SCULPT</a>
-  <a href="index.html" class="nav-back">← Zurück zur Startseite</a>
-</nav>
+  <h2>1. Präambel</h2>
+  <p>Mit der folgenden Datenschutzerklärung informieren wir Sie darüber, welche personenbezogenen Daten wir bei Nutzung dieser Website sowie im Rahmen unserer Dienstleistungen verarbeiten, zu welchen Zwecken, auf welcher Rechtsgrundlage und in welchem Umfang. Diese Erklärung gilt für alle von SCULPT Body &amp; Face Studio, Sofiia Golubieva, durchgeführten Verarbeitungen personenbezogener Daten im Zusammenhang mit kosmetischen Behandlungen, apparativer Kosmetik, Lymphdrainage sowie Körper- und Gesichtsmassagen und für den Betrieb dieser Website.</p>
 
-<div class="page-header">
-  <div class="page-label">Rechtliches</div>
-  <h1 class="page-title">Datenschutzerklärung</h1>
-</div>
-
-<div class="content">
-
-  <h2><span class="section-num">01</span>Präambel</h2>
-  <p>Mit der folgenden Datenschutzerklärung informieren wir Sie darüber, welche personenbezogenen Daten wir verarbeiten, zu welchen Zwecken und in welchem Umfang. Diese Datenschutzerklärung gilt für alle von Sculpt Body &amp; Face Studio Sofiia Golubieva durchgeführten Verarbeitungen personenbezogener Daten im Rahmen unserer Dienstleistungen im Bereich kosmetischer Behandlungen, apparativer Kosmetik, Lymphdrainage, Körper- und Gesichtsmassagen.</p>
-  <p style="font-size:0.72rem;color:var(--text-mid);opacity:0.65;">Stand: Mai 2026</p>
-
-  <h2><span class="section-num">02</span>Verantwortliche Stelle</h2>
+  <h2>2. Verantwortlicher</h2>
   <p>
     <strong>Sofiia Golubieva</strong><br>
-    Sculpt Body &amp; Face Studio<br>
-    Hauptstr. 63–65, 26122 Oldenburg (Oldb)<br>
+    SCULPT Body &amp; Face Studio<br>
+    Hauptstraße 53–55<br>
+    26122 Oldenburg<br>
     Deutschland<br>
     Telefon: +49 160 1137077<br>
     E-Mail: <a href="mailto:sofigolubeva2810@gmail.com">sofigolubeva2810@gmail.com</a>
   </p>
+  <div class="box">Ein betrieblicher Datenschutzbeauftragter ist aufgrund der Betriebsgröße gesetzlich nicht zu bestellen (§ 38 BDSG).</div>
 
-  <h2><span class="section-num">03</span>Arten der verarbeiteten Daten</h2>
-  <p>Wir verarbeiten folgende personenbezogene Daten:</p>
+  <h2>3. Hosting (GitHub Pages)</h2>
+  <p>Diese Website wird über den Dienst <strong>GitHub Pages</strong> gehostet, ein Angebot von GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (Teil von Microsoft Corporation).</p>
+  <p>Beim Aufruf der Website erhebt GitHub Pages automatisch technische Zugriffsdaten (Server-Logfiles), insbesondere:</p>
+  <ul>
+    <li>IP-Adresse des zugreifenden Geräts</li>
+    <li>Datum und Uhrzeit des Zugriffs</li>
+    <li>Browsertyp und -version, Betriebssystem</li>
+    <li>aufgerufene Seite/Datei, übertragene Datenmenge</li>
+    <li>Referrer-URL (zuvor besuchte Seite)</li>
+  </ul>
+  <p><strong>Zweck:</strong> technisch fehlerfreie Bereitstellung und Auslieferung der Website, Gewährleistung der Systemsicherheit und -stabilität.<br>
+  <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionsfähigen Betrieb der Website).<br>
+  <strong>Speicherdauer:</strong> Server-Logfiles werden nach Angaben von GitHub kurzfristig zu Sicherheitszwecken vorgehalten und anschließend gelöscht bzw. anonymisiert.<br>
+  <strong>Drittlandübermittlung:</strong> GitHub, Inc. verarbeitet Daten auch in den USA. GitHub hat sich nach eigenen Angaben zur Einhaltung von Standardvertragsklauseln (SCC) verpflichtet; weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+
+  <h2>4. Cookies und Einwilligungsverwaltung</h2>
+  <p>Beim ersten Besuch der Website wird ein Cookie-Banner angezeigt. Ihre Auswahl ("Akzeptieren" oder "Nur notwendige") wird technisch mittels <strong>localStorage</strong> (Schlüssel <code>cookieConsent</code>) in Ihrem Browser gespeichert, damit der Banner bei erneutem Besuch nicht wieder erscheint. Diese Speicherung ist technisch notwendig und erfolgt unabhängig von Ihrer Auswahl (Art. 6 Abs. 1 lit. f DSGVO, § 25 Abs. 2 Nr. 2 TTDSG).</p>
+  <p>Nicht technisch notwendige Dienste — insbesondere <strong>Google Analytics</strong> — werden erst geladen, nachdem Sie im Banner aktiv auf „Akzeptieren" geklickt haben. Bei „Nur notwendige" bzw. ohne Auswahl werden diese Dienste nicht geladen. Sie können Ihre Einwilligung jederzeit für die Zukunft widerrufen, indem Sie Ihre Browser-Daten (localStorage) löschen und die Auswahl erneut treffen.</p>
+
+  <h2>5. Google Fonts</h2>
+  <p>Diese Website bindet Schriftarten ("Google Fonts") ein, die über Server von Google (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland; Muttergesellschaft Google LLC, USA) bereitgestellt werden. Beim Laden der Seite wird dazu eine Verbindung zu Google-Servern aufgebaut, wobei Ihre IP-Adresse an Google übermittelt wird.</p>
+  <p><strong>Zweck:</strong> einheitliche, ansprechende Darstellung der Website.<br>
+  <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer konsistenten visuellen Darstellung).<br>
+  <strong>Drittlandübermittlung:</strong> USA. Google LLC ist nach eigenen Angaben unter dem EU-U.S. Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google-Datenschutzerklärung</a>.<br>
+  <em>Hinweis: Der Betreiber prüft aktuell die Umstellung auf lokal gehostete Schriftdateien, um eine Datenübertragung an Google vollständig zu vermeiden.</em></p>
+
+  <h2>6. Google Analytics</h2>
+  <p>Sofern Sie eingewilligt haben, setzen wir <strong>Google Analytics</strong> ein, einen Webanalysedienst von Google Ireland Limited (Messkennung: G-WLDJ2GG1G5). Google Analytics verwendet Cookies bzw. vergleichbare Technologien, die eine Analyse der Nutzung der Website ermöglichen (z. B. besuchte Seiten, Verweildauer, Herkunft der Besucher).</p>
+  <p><strong>Verarbeitete Daten:</strong> gekürzte/anonymisierte IP-Adresse, Geräte- und Browserinformationen, Nutzungsverhalten auf der Website.<br>
+  <strong>Zweck:</strong> statistische Auswertung der Websitenutzung zur Verbesserung unseres Angebots.<br>
+  <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO i. V. m. § 25 Abs. 1 TTDSG (Einwilligung über den Cookie-Banner).<br>
+  <strong>Drittlandübermittlung:</strong> USA (Google LLC), auf Grundlage des EU-U.S. Data Privacy Framework bzw. ergänzender Standardvertragsklauseln.<br>
+  <strong>Speicherdauer:</strong> Nutzerbezogene Ereignisdaten werden bei Google standardmäßig nach 14 Monaten gelöscht.<br>
+  <strong>Widerruf:</strong> Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen (siehe Ziffer 4). Zusätzlich steht ein Browser-Add-on zur Deaktivierung von Google Analytics zur Verfügung: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">tools.google.com/dlpage/gaoptout</a>.</p>
+
+  <h2>7. Online-Terminbuchung über Treatwell</h2>
+  <p>Für die Online-Terminbuchung binden wir das Buchungswidget von <strong>Treatwell</strong> (Treatwell Deutschland GmbH bzw. verbundene Unternehmen der Treatwell-Gruppe) ein. Das Widget lädt Skripte von <code>buchung.treatwell.de</code> und ermöglicht die direkte Auswahl und Buchung von Behandlungsterminen auf unserer Seite.</p>
+  <p><strong>Verarbeitete Daten:</strong> von Ihnen im Buchungsprozess eingegebene Daten (Name, Kontaktdaten, gewählte Behandlung, Termin), technische Verbindungsdaten (u. a. IP-Adresse) beim Laden des Widgets.<br>
+  <strong>Zweck:</strong> Ermöglichung der Online-Terminbuchung.<br>
+  <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Erfüllung vorvertraglicher Maßnahmen auf Ihre Anfrage) sowie Art. 6 Abs. 1 lit. f DSGVO (Bereitstellung der Buchungsfunktion).<br>
+  <strong>Drittlandübermittlung:</strong> möglich, abhängig vom Serverstandort von Treatwell; nähere Informationen entnehmen Sie der Datenschutzerklärung von Treatwell: <a href="https://www.treatwell.de/info/privacy-policy/" target="_blank" rel="noopener">treatwell.de/info/privacy-policy</a>.<br>
+  Mit Treatwell besteht, soweit erforderlich, eine Vereinbarung zur Auftragsverarbeitung bzw. gemeinsamen Verantwortlichkeit gemäß Art. 26/28 DSGVO.</p>
+
+  <h2>8. WhatsApp</h2>
+  <p>Über den Button „Gutschein anfragen" bzw. entsprechende Kontaktlinks können Sie uns per WhatsApp kontaktieren (Anbieter: WhatsApp Ireland Limited, Muttergesellschaft Meta Platforms, Inc., USA). Bei Nutzung werden Ihre Telefonnummer, der Chatinhalt sowie Metadaten (z. B. Zeitpunkt) verarbeitet.</p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung durch aktive Kontaktaufnahme) bzw. Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Kommunikation).<br>
+  <strong>Drittlandübermittlung:</strong> USA, im Rahmen der WhatsApp-Datenschutzrichtlinie.</p>
+
+  <h2>9. Social-Media-Profile</h2>
+  <p>Wir unterhalten öffentlich zugängliche Profile in sozialen Netzwerken:</p>
+  <ul>
+    <li>Instagram (@sculpt_body_face_studio) – Anbieter: Meta Platforms Ireland Limited</li>
+    <li>Facebook (Sculpt Body &amp; Face Studio) – Anbieter: Meta Platforms Ireland Limited</li>
+  </ul>
+  <p>Beim Besuch dieser Profile können personenbezogene Daten (z. B. IP-Adresse, Interaktionsdaten) durch den jeweiligen Plattformbetreiber – auch außerhalb der EU – verarbeitet werden. Wir haben hierauf keinen vollständigen Einfluss. Weitere Informationen entnehmen Sie den Datenschutzhinweisen des jeweiligen Anbieters. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (Interesse an einer Außendarstellung und Kommunikation mit Interessenten).</p>
+  <div class="box">Hinweis: Der auf der Website verlinkte TikTok-Button ist derzeit technisch nicht aktiv (Platzhalter-Link). Ein TikTok-Profil wird erst nach Aktivierung des Links betrieben; diese Erklärung wird bei Aktivierung entsprechend ergänzt.</div>
+
+  <h2>10. Gesundheitsdaten (besondere Kategorien personenbezogener Daten)</h2>
+  <p>Im Rahmen der Terminvorbereitung und -durchführung können Angaben zu Allergien, Kontraindikationen oder gesundheitlichen Beschwerden erhoben werden, soweit dies für eine sichere Durchführung der Behandlung erforderlich ist.</p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 9 Abs. 2 lit. a DSGVO (ausdrückliche Einwilligung) bzw. Art. 9 Abs. 2 lit. h DSGVO (Gesundheitsvorsorge im Rahmen der Behandlung).<br>
+  Vorher-/Nachher-Fotos werden ausschließlich nach gesonderter, ausdrücklicher und schriftlicher Einwilligung erstellt und veröffentlicht (Art. 6 Abs. 1 lit. a DSGVO); ein Widerruf ist jederzeit mit Wirkung für die Zukunft möglich.</p>
+
+  <h2>11. Arten der verarbeiteten Daten im Überblick</h2>
   <ul>
     <li><strong>Bestandsdaten:</strong> Vor- und Nachname, Anschrift</li>
     <li><strong>Kontaktdaten:</strong> Telefonnummer, E-Mail-Adresse, WhatsApp-Kontakt</li>
-    <li><strong>Termindaten:</strong> Datum, Uhrzeit und Art der gebuchten Behandlung</li>
-    <li><strong>Gesundheitsdaten:</strong> Angaben zu Allergien, Kontraindikationen oder gesundheitlichen Beschwerden, sofern diese für die sichere Durchführung erforderlich sind</li>
+    <li><strong>Termindaten:</strong> Datum, Uhrzeit, gebuchte Behandlung</li>
+    <li><strong>Gesundheitsdaten:</strong> Allergien, Kontraindikationen, gesundheitliche Hinweise</li>
     <li><strong>Dokumentationsdaten:</strong> Behandlungsnotizen zur Qualitätssicherung</li>
-    <li><strong>Bildaufnahmen:</strong> Vorher-/Nachher-Fotos ausschließlich nach ausdrücklicher schriftlicher Einwilligung</li>
+    <li><strong>Bildaufnahmen:</strong> Vorher-/Nachher-Fotos, nur nach gesonderter Einwilligung</li>
+    <li><strong>Technische Daten:</strong> IP-Adresse, Zugriffszeit, Browsertyp (Hosting/Logfiles)</li>
   </ul>
 
-  <h2><span class="section-num">04</span>Kategorien betroffener Personen</h2>
+  <h2>12. Speicherdauer</h2>
   <ul>
-    <li>Kundinnen und Kunden</li>
-    <li>Interessenten</li>
-    <li>Besucher unserer Social-Media-Profile</li>
-  </ul>
-
-  <h2><span class="section-num">05</span>Zwecke der Verarbeitung</h2>
-  <p>Die Verarbeitung Ihrer Daten erfolgt zu folgenden Zwecken:</p>
-  <ul>
-    <li>Vereinbarung und Verwaltung von Terminen</li>
-    <li>Durchführung kosmetischer Behandlungen und Massagen</li>
-    <li>Dokumentation gesundheitlicher Hinweise und Kontraindikationen</li>
-    <li>Kommunikation per Telefon, E-Mail, WhatsApp oder Social Media</li>
-    <li>Erfüllung gesetzlicher Verpflichtungen</li>
-    <li>Werbung und Veröffentlichung von Bildern/Videos nur nach ausdrücklicher Einwilligung</li>
-  </ul>
-
-  <h2><span class="section-num">06</span>Rechtsgrundlagen der Verarbeitung</h2>
-  <p>Die Verarbeitung personenbezogener Daten erfolgt auf Grundlage der Datenschutz-Grundverordnung (DSGVO):</p>
-  <ul>
-    <li>Art. 6 Abs. 1 lit. b DSGVO – zur Vertragserfüllung oder Durchführung vorvertraglicher Maßnahmen</li>
-    <li>Art. 6 Abs. 1 lit. c DSGVO – zur Erfüllung gesetzlicher Verpflichtungen</li>
-    <li>Art. 6 Abs. 1 lit. a DSGVO – auf Grundlage Ihrer Einwilligung (z.B. Fotoveröffentlichungen)</li>
-    <li>Art. 9 Abs. 2 lit. a DSGVO – Verarbeitung besonderer Kategorien personenbezogener Daten (Gesundheitsdaten) auf Grundlage Ihrer ausdrücklichen Einwilligung</li>
-  </ul>
-
-  <h2><span class="section-num">07</span>Speicherdauer</h2>
-  <ul>
-    <li>Rechnungen und steuerrelevante Unterlagen: 10 Jahre gemäß gesetzlicher Aufbewahrungspflichten</li>
+    <li>Rechnungen und steuerrelevante Unterlagen: 10 Jahre (§ 147 AO, § 257 HGB)</li>
     <li>Kundendaten und Behandlungsdokumentationen: bis zu 3 Jahre nach der letzten Behandlung</li>
-    <li>Anfragen per E-Mail oder WhatsApp: werden gelöscht, sobald sie nicht mehr erforderlich sind</li>
+    <li>Anfragen per E-Mail oder WhatsApp: bis zur vollständigen Bearbeitung, danach Löschung, sofern keine gesetzliche Aufbewahrungspflicht entgegensteht</li>
+    <li>Google-Analytics-Daten: 14 Monate (Google-Standardeinstellung)</li>
+    <li>Server-Logfiles (GitHub Pages): kurzfristige Vorhaltung zu Sicherheitszwecken</li>
   </ul>
 
-  <h2><span class="section-num">08</span>Weitergabe von Daten an Dritte</h2>
-  <p>Eine Weitergabe Ihrer personenbezogenen Daten erfolgt nur, sofern dies gesetzlich erlaubt oder zur Vertragserfüllung erforderlich ist.</p>
-  <p>Wir nutzen folgende Kommunikations- und Plattformdienste:</p>
+  <h2>13. Empfänger / Weitergabe von Daten an Dritte</h2>
+  <p>Eine Weitergabe personenbezogener Daten erfolgt nur, sofern dies gesetzlich erlaubt oder zur Vertragserfüllung erforderlich ist, an folgende Kategorien von Empfängern:</p>
   <ul>
-    <li>WhatsApp zur Terminvereinbarung und Kundenkommunikation</li>
-    <li>Instagram</li>
-    <li>Facebook</li>
-    <li>TikTok</li>
+    <li>GitHub, Inc. (Hosting)</li>
+    <li>Google Ireland Limited / Google LLC (Google Fonts, Google Analytics)</li>
+    <li>Treatwell (Online-Terminbuchung)</li>
+    <li>WhatsApp Ireland Limited / Meta Platforms, Inc. (Kundenkommunikation)</li>
+    <li>Meta Platforms Ireland Limited (Instagram, Facebook)</li>
   </ul>
-  <p>Bei der Nutzung dieser Plattformen gelten zusätzlich die Datenschutzbestimmungen der jeweiligen Anbieter.</p>
 
-  <h2><span class="section-num">09</span>Rechte der betroffenen Personen</h2>
+  <h2>14. Rechte der betroffenen Personen</h2>
   <p>Sie haben nach der DSGVO jederzeit folgende Rechte:</p>
   <ul>
-    <li>Recht auf Auskunft über die gespeicherten Daten</li>
-    <li>Recht auf Berichtigung unrichtiger Daten</li>
-    <li>Recht auf Löschung Ihrer Daten, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen</li>
-    <li>Recht auf Einschränkung der Verarbeitung</li>
-    <li>Recht auf Datenübertragbarkeit</li>
-    <li>Recht auf Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft</li>
-    <li>Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde</li>
+    <li>Recht auf Auskunft über die gespeicherten Daten (Art. 15 DSGVO)</li>
+    <li>Recht auf Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+    <li>Recht auf Löschung Ihrer Daten, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen (Art. 17 DSGVO)</li>
+    <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+    <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+    <li><strong>Recht auf Widerspruch gegen die Verarbeitung aus Gründen Ihrer besonderen Situation, insbesondere bei Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Art. 21 DSGVO)</strong></li>
+    <li>Recht auf Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+    <li>Recht auf Beschwerde bei einer Datenschutzaufsichtsbehörde (Art. 77 DSGVO), zuständig ist z. B. die Landesbeauftragte für den Datenschutz Niedersachsen</li>
   </ul>
+  <p>Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt.</p>
 
-  <h2><span class="section-num">10</span>Datensicherheit</h2>
-  <p>Wir treffen technische und organisatorische Sicherheitsmaßnahmen, um Ihre personenbezogenen Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen. Dazu gehören insbesondere:</p>
+  <h2>15. Datensicherheit</h2>
+  <p>Wir treffen technische und organisatorische Maßnahmen, um Ihre personenbezogenen Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen, insbesondere:</p>
   <ul>
-    <li>Passwortgeschützte Geräte</li>
-    <li>Sichere Aufbewahrung von Kundendaten</li>
-    <li>Eingeschränkter Zugriff auf personenbezogene Informationen</li>
+    <li>passwortgeschützte Geräte</li>
+    <li>sichere Aufbewahrung physischer und digitaler Kundendaten</li>
+    <li>eingeschränkter Zugriff auf personenbezogene Informationen</li>
+    <li>Übertragung der Website via HTTPS-Verschlüsselung</li>
   </ul>
 
-  <h2><span class="section-num">11</span>Social Media</h2>
-  <p>Wir unterhalten öffentlich zugängliche Profile in sozialen Netzwerken. Beim Besuch unserer Profile können personenbezogene Daten durch die jeweiligen Plattformbetreiber verarbeitet werden. Weitere Informationen entnehmen Sie bitte den Datenschutzhinweisen der jeweiligen Anbieter.</p>
+  <h2>16. Änderungen dieser Datenschutzerklärung</h2>
+  <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänderte Rechtslagen oder bei Änderungen der eingesetzten Dienste anzupassen. Es gilt jeweils die zum Zeitpunkt Ihres Besuchs aktuelle Fassung.</p>
 
-  <h2><span class="section-num">12</span>Kontakt bei Datenschutzfragen</h2>
-  <p>Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten können Sie uns jederzeit kontaktieren:</p>
+  <h2>17. Kontakt bei Datenschutzfragen</h2>
   <p>
     <strong>Sofiia Golubieva</strong><br>
     E-Mail: <a href="mailto:sofigolubeva2810@gmail.com">sofigolubeva2810@gmail.com</a><br>
     Telefon: +49 160 1137077
   </p>
+  <p class="stand">Stand: August 2026</p>
 
-  <p style="margin-top:2.5rem;font-size:0.7rem;color:var(--text-mid);opacity:0.6;">Stand: Mai 2026</p>
+  <footer>
+    © 2026 SCULPT Body &amp; Face Studio · Sofiia Golubieva
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
 </div>
-
-<footer>
-  © 2026 SCULPT Body &amp; Face Studio · Sofiia Golubieva &nbsp;|&nbsp;
-  <a href="impressum.html">Impressum</a>
-  <a href="datenschutz.html">Datenschutz</a>
-</footer>
 </body>
 </html>
